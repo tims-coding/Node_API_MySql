@@ -34,4 +34,57 @@ usersdb.one = (id) => {
   });
 };
 
+usersdb.add = (name, guests, package, id) => {
+  return new Promise((resolve, reject) => {
+    const createdAt = new Date()
+      .toISOString()
+      .replace(/T/, " ")
+      .replace(/\..+/, "");
+    const updatedAt = new Date()
+      .toISOString()
+      .replace(/T/, " ")
+      .replace(/\..+/, "");
+    pool.query(
+      "INSERT INTO users (name, guests, package, id, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?)",
+      [name, guests, package, id, createdAt, updatedAt],
+      (err, results) => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve(results);
+      }
+    );
+  });
+};
+
+usersdb.delete = (id) => {
+  return new Promise((resolve, reject) => {
+    pool.query("DELETE FROM users WHERE id = ?", [id], (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(results);
+    });
+  });
+};
+
+usersdb.update = (name, guests, package, id) => {
+  return new Promise((resolve, reject) => {
+    const updatedAt = new Date()
+      .toISOString()
+      .replace(/T/, " ")
+      .replace(/\..+/, "");
+    pool.query(
+      "UPDATE users SET name = ?, package = ?, guests = ?, updatedAt = ? WHERE id = ?",
+      [name, package, guests, updatedAt, id],
+      (err, results) => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve(results);
+      }
+    );
+  });
+};
+
 module.exports = usersdb;
