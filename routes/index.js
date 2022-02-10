@@ -41,4 +41,33 @@ router.get("/:id", async (req, res) => {
     console.log(error);
   }
 });
+
+router.post("/post", async (req, res) => {
+  const { name, guests, package, id } = req.body;
+  try {
+    await db.add(name, guests, package, id);
+    res.json(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    await db.delete(req.params.id);
+    res.json(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.put("/edit/:id", async (req, res) => {
+  const { name, guests, package, id } = req.body;
+  try {
+    await db.update(name, guests, package, id);
+    res.send(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
