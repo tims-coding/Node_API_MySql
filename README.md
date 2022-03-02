@@ -11,7 +11,14 @@ This API performs GET, POST, PUT, and DELETE operations on a table created in My
 ## Technologies
 Project is created with:
 * express
+* body-parser
 * cors
 * mysql
 * dotenv
 * nodemon
+* node-fetch
+* stripe
+* uuid
+* node-telegram-bot-api
+* jsonwebtoken
+* randomcolor
