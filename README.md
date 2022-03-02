@@ -17,8 +17,3 @@ Project is created with:
 * dotenv
 * nodemon
 * node-fetch
-* stripe
-* uuid
-* node-telegram-bot-api
-* jsonwebtoken
-* randomcolor
