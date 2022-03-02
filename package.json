@@ -14,8 +14,13 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "node-fetch": "^3.2.0",
-    "nodemon": "^2.0.15"
+    "node-telegram-bot-api": "^0.56.0",
+    "nodemon": "^2.0.15",
+    "randomcolor": "^0.6.2",
+    "stripe": "^8.203.0",
+    "uuid": "^8.3.2"
   }
 }
