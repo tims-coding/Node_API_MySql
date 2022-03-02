@@ -6,7 +6,7 @@
 
 ## General info
 #### What does this API do? 
-This API performs GET, POST, PUT, and DELETE operations on a table created in MySQL database. There is additional GET operation for a specific user given the primary key.
+This API performs GET, POST, PUT, and DELETE operations on a table created in MySQL database. It also is a porxy server for a random external api, in this case it is a flight information service.
 
 ## Technologies
 Project is created with:
